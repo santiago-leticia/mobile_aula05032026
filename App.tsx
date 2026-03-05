@@ -1,10 +1,19 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react';
+import { Button, StyleSheet, Text, View } from 'react-native';
+
+const  [nome, setNome] = useState<string>("Joao Silva");
+
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+
+      <Text>{nome}</Text>
+      <Button title="Trocar Nome" onPress={() =>{
+        setNome("Jose Santos");
+        console.log("Nome: ", nome);
+      }}/>
       <StatusBar style="auto" />
     </View>
   );
